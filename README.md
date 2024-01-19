@@ -1,5 +1,5 @@
 # Elevator Pitch
-Is your reaction time abysmal? Mine is too! Do you want to prevent aging? I can't help you there. Introducing space themed whack a mole!
+Is your reaction time abysmal? Mine is too! Do you want to prevent aging? I can't help you there. Introducing Cosmic Clicker Challenge!
 # Key Features
 * We check your reaction time by seeing how many asteroids you can click in a minute.
 * You can compare your results to the competition after each round on a live updating scoreboard.
