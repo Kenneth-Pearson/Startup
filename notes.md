@@ -2,10 +2,12 @@
 wow!! This is cool :)
 ## EC2
 35.171.1.184
-http://cosmicclickerchallenge.click/
-(soon to be https)
-ssh -i production.pem ubuntu@35.171.1.184
+https://cosmicclickerchallenge.click/
 I learned how to create an EC2 instance and I allocated an elastic ip address.
-## Entering My Server
+## Entering my server
+ssh -i production.pem ubuntu@35.171.1.184
 ssh -i production.pem ubuntu@cosmicclickerchallenge.click
-## Placeholder
+## Play.html
+https://startup.cosmicclickerchallenge.click/play.html
+## Deploying files to the server
+./deployFiles.sh -k ../production.pem -h cosmicclickerchallenge.click  -s startup
