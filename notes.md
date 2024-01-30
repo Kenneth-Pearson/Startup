@@ -10,4 +10,5 @@ ssh -i production.pem ubuntu@cosmicclickerchallenge.click
 ## Play.html
 https://startup.cosmicclickerchallenge.click/play.html
 ## Deploying files to the server
+cd clicker
 ./deployFiles.sh -k ../production.pem -h cosmicclickerchallenge.click  -s startup
