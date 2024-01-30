@@ -6,7 +6,7 @@
     <body>
         <header>
             <h1>Gametime</h1>
-            <hr />
+        <hr />
                 <nav> <!-- Application Navigation -->
                     <menu>
                         <li><a href="index.html">Home</a></li>
@@ -14,32 +14,42 @@
                         <li><a href="scores.html">Scores</a></li>
                     </menu>
                 </nav>
-                <hr />
+        <hr />
         </header>
         <main>
-            <div class="players">
+            <div class="players"> <!-- Player Name Display -->
                 Player:
-                <span class="player_name">???</span>
+                <span class="player_name">Hot_Stuff</span>
             </div>
-            <div>
-                <ul class="update_notifications"> <!-- Temporary Demonstration of Live Updating Scoreboard...-->
+            <div> <!-- Demonstration of Scoreboard Notifications...-->
+                <ul class="update_notifications"> 
                     <li class="player_name">TSwizzle took 5th place on the leaderboard!
                     <li class="player_name">H3 took 3rd place on the leaderboard!</li>
+                    <!--<li class="player_name">Albert0 earned the First Shots badge!</li>-->
                 </ul>
             </div>
         <hr /> 
-            <div>
+            <div> <!-- Gameplay Convenience -->
                 <button>Pause</button>
                 <button>Restart</button>
             </div>
-            <div>
+            <div> <!-- Gameplay Required Images -->
                 <img src="https://art.pixilart.com/3df0c312d89ed5b.png"></img>
             </div>
+        <hr />    
+            <div> <!-- Gameplay Timer -->
+                <div class="container">
+                    <ul>
+                        <li><h1 id="time_till_start">Time Till Shootin':</h1></li>
+                        <li><h1 id="seconds_remaining">Time Remaining:</h1></li>
+                    </ul>
+                </div>
+            </div>
         </main>
-        <footer>
-            <hr />
+        <footer> <!-- Author -->
+        <hr /> 
             <span>Devilishly Handsome Author</span>
-            <hr />
+        <hr />
             <a href="https://github.com/Kenneth-Pearson">Github</a>
         </footer>
     </body>

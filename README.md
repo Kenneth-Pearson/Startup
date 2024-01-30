@@ -20,3 +20,17 @@ Is your reaction time abysmal? Mine is too! Do you want to prevent aging? I can'
 
 # Rough Sketch
 ![UGLY](cs260startupsketch.jpg)
+
+# HTML
+
+## HTML Pages ##
+Three HTML pages to login (soon to be included), play, and view scores.
+## Links ##
+Previously mentioned HTML pages are linked (mostly).
+## Text ##
+
+## Images ## 
+An asteroid is shot at during gameplay.
+## DB/Login ##
+## Websocket ##
+At the end of each match, the scoreboard will update in realtime to reflect the top 10 highest scores.
