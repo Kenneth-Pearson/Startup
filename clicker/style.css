@@ -12,11 +12,27 @@ footer{
 }
 
 
-*{
+/* play.html */
+#warning{
+    color: rgb(105, 8, 8);
+    font-style: bold;
+    /*background-color:#ffffff;*/
+    border: black solid thin;
+    border-radius: 2px;
+}
+
+#start_game{
+    color:rgb(29, 17, 29)
+    
+}
+
+/* Background Animation */
+/*head{
     animation: colors 45s infinite;
 }
 
-@keyframes colors{
+@keyframes colors
+{
     from{
         background-color:red;
     }
@@ -28,22 +44,22 @@ footer{
     25%{
         background-color:yellow;
     }
-
     37.5%{
-        background-color:green;
+        background-color:lime;
     }
 
     50%{
+        background-color:green;
+    }
+
+    62.5%{
         background-color:cyan;
     }
-    62.5%{
+    75%{
         background-color:blue;
     }
-    75%{
-        background-color:purple;
-    }
     87.5%{
-        background-color:violet;
+        background-color:purple;
     }
     to{
         background-color:red;
