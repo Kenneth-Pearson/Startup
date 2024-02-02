@@ -7,9 +7,9 @@
     text-align: center;
 }
 
-header{
+h1{
     font-family: 'Sixtyfour', sans-serif;
-    font-size: 10vh;
+    font-size: 7.5vh;
     text-align: center;
 }
 
@@ -26,7 +26,7 @@ footer{
 #warning{
     color: rgb(255, 255, 255);
     font-style: bold;
-    font-size: 2.5vh;
+    font-size: 5vh;
     background-color:#d10606;
     border-bottom: black solid thick;
     border-right: black solid thick;

@@ -10,20 +10,23 @@
         <header>
             <h1>The better your accuracy, the better your score!</h1>
         <hr />
-                <nav> <!-- Application Navigation -->
+                <nav> <!-- Application Navigation & Player Identity -->
                     <menu>
                         <li><a href="index.html">Home 🏠</a></li>
                         <li><a href="play.html">Play 🔄</a></li>
                         <li><a href="scores.html">Scoreboard 🏆</a></li>
+                        <li>Player: <span class="player_name">Hot_Stuff</span></li>
                     </menu>
                 </nav>
         <hr />
         </header>
         <main>
-            <div class="players"> <!-- Player Name Display -->
-                Player:
-                <span class="player_name">Hot_Stuff</span>
-            </div>
+            <div> <!-- Gameplay Timer -->
+                <ul id="gameplay_messages">
+                    <li id="time_till_start">Time Till Shootin':</li> -
+                    <li id="seconds_remaining">Time Remaining:</li> 14
+                </ul>
+        </div>
             <div> <!-- Demonstration of Scoreboard Notifications...-->
                 <ul class="update_notifications" id ="notifications"> 
                     <li class="player_name">TSwizzle took 5th place on the leaderboard!
@@ -32,32 +35,21 @@
                 </ul>
             </div>
         <hr /> 
-            <div> <!-- Start Gameplay -->
-                <button id="start_game">Start Game</button>
-        <hr />        
-            </div>
-            <div> <!-- Gameplay Convenience -->
-                <button id="restart_game">Restart</button>
-            </div>
+            <ul> <!-- Gameplay Convenience -->
+                <li id="start_game"><button>Start Game</button></li>
+                <li id="restart_game"><button>Restart Game</button></li>
+            </ul>
             <div> <!-- Gameplay Required Images -->
                 <img src="space_rock_1.png" width="100"></img>
                 <img src="space_rock_2.png" width="100"></img>
             </div>
         <hr />    
-            <div> <!-- Gameplay Timer -->
-                <div>
-                    <ul id="gameplay_messages">
-                        <li><h1 id="time_till_start">Time Till Shootin':</h1></li>
-                        <li><h1 id="seconds_remaining">Time Remaining:</h1></li>
-                        <!-- Timer Number? -->
-                    </ul>
-                </div>
-            </div>
         </main>
         <footer id="footer"> <!-- Author -->
-        <hr /> 
-            <span>Devilishly Handsome Author</span>
-            <a href="https://github.com/Kenneth-Pearson/Startup">Github</a>
+            <ul>
+                <li><span>Devilishly Handsome Author:</span></li>
+                <li><a href="https://github.com/Kenneth-Pearson/Startup">Github</a></li>
+            </ul>
         </footer>
     </body>
 </html>
