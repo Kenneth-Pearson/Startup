@@ -12,3 +12,5 @@ https://startup.cosmicclickerchallenge.click/play.html
 ## Deploying files to the server
 cd clicker
 ./deployFiles.sh -k ../production.pem -h cosmicclickerchallenge.click  -s startup
+## API I want to use
+https://github.com/nasa/apod-api
