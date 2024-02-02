@@ -21,16 +21,18 @@ Is your reaction time abysmal? Mine is too! Do you want to prevent aging? I can'
 # Rough Sketch
 ![UGLY](cs260startupsketch.jpg)
 
-# HTML
-
+# HTML Deliverable
 ## HTML Pages ##
-Three HTML pages to login (soon to be included), play, and view scores.
+Three HTML pages that represent home/login, play, and scores.
 ## Links ##
-Previously mentioned HTML pages are linked (mostly).
+The previously mentioned HTML pages are linked together in a navigation menu.
 ## Text ##
-
+Related information is provided for each HTML page.
 ## Images ## 
-An asteroid is shot at during gameplay.
+An asteroid is shot at during gameplay. 
 ## DB/Login ##
+Username and password are required to access the website.
 ## Websocket ##
 At the end of each match, the scoreboard will update in realtime to reflect the top 10 highest scores.
+## API Placeholder ##
+Sun picture will be replaced with a space picture of the day from this API (https://github.com/nasa/apod-api)
