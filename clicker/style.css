@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 5vh;
+    text-align: center;
+}
+
+footer{
+    text-align:right;
+    font-size: 5vh;
+}
+
+
+*{
+    animation: colors 45s infinite;
+}
+
+@keyframes colors{
+    from{
+        background-color:red;
+    }
+
+    12.5%{
+        background-color:orange;
+    }
+
+    25%{
+        background-color:yellow;
+    }
+
+    37.5%{
+        background-color:green;
+    }
+
+    50%{
+        background-color:cyan;
+    }
+    62.5%{
+        background-color:blue;
+    }
+    75%{
+        background-color:purple;
+    }
+    87.5%{
+        background-color:violet;
+    }
+    to{
+        background-color:red;
+    }
+}

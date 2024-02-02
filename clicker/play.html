@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
         <link rel="icon" href="better_logo.ico" />
     </head>
     <body>
         <header>
-            <h1>Execute Order Sixt-!</h1>
+            <h1>The better your accuracy, the better your score!</h1>
         <hr />
                 <nav> <!-- Application Navigation -->
                     <menu>
@@ -24,7 +25,7 @@
                 <span class="player_name">Hot_Stuff</span>
             </div>
             <div> <!-- Demonstration of Scoreboard Notifications...-->
-                <ul class="update_notifications"> 
+                <ul class="update_notifications" id ="notifications"> 
                     <li class="player_name">TSwizzle took 5th place on the leaderboard!
                     <li class="player_name">Ethan took 3rd place on the leaderboard!</li>
                     <!--<li class="player_name">Albert0 earned the First Shots badge!</li>-->
@@ -44,8 +45,8 @@
             </div>
         <hr />    
             <div> <!-- Gameplay Timer -->
-                <div class="container">
-                    <ul>
+                <div>
+                    <ul id="gameplay_messages">
                         <li><h1 id="time_till_start">Time Till Shootin':</h1></li>
                         <li><h1 id="seconds_remaining">Time Remaining:</h1></li>
                         <!-- Timer Number? -->
@@ -53,10 +54,9 @@
                 </div>
             </div>
         </main>
-        <footer> <!-- Author -->
+        <footer id="footer"> <!-- Author -->
         <hr /> 
             <span>Devilishly Handsome Author</span>
-        <hr />
             <a href="https://github.com/Kenneth-Pearson/Startup">Github</a>
         </footer>
     </body>
