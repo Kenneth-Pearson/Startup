@@ -77,3 +77,12 @@ footer{
         background-color:red;
     }
 }
+*/
+
+
+/* index.html */
+.disabled
+{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
