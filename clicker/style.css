@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
 
-*{
+/* *{
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 5vh;
     text-align: center;
-}
+} */
 
 header{
     text-align: center;
@@ -25,7 +25,9 @@ li{
 
 footer{
     text-align:left;
-    font-size: 5vh;
+    font-size: 2.5vh;
+    background-color: black;
+    color: white;
 }
 
 
@@ -40,9 +42,23 @@ footer{
     border-radius: 5px;
 }
 
+main
+{
+    display:flex;
+    flex-direction:row;
+    height:70vh;
+    font-size: 2.5vh;
+}
+
 #start_game{
-    color:rgb(226, 93, 226)
-    
+    color:rgb(72, 170, 52)   
+}
+
+.update_notifications
+{
+    background-color: gray;
+    opacity: 0.5;
+    border-radius: 5px;
 }
 
 /* Background Animation */
