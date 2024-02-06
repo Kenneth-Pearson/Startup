@@ -7,17 +7,24 @@
     text-align: center;
 }
 
+header{
+    text-align: center;
+    color: white;
+    background-color:black;
+    padding: 1em;
+}
+
 h1{
     font-family: 'Sixtyfour', sans-serif;
-    font-size: 7.5vh;
-    text-align: center;
+    font-size: 1fr;
 }
 
 li{
     display:inline;
 }
+
 footer{
-    text-align:right;
+    text-align:left;
     font-size: 5vh;
 }
 
@@ -34,7 +41,7 @@ footer{
 }
 
 #start_game{
-    color:rgb(29, 17, 29)
+    color:rgb(226, 93, 226)
     
 }
 
