@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+    text-align: center;
+}  
+
+html{
+    height: 100%;
+}
+
+
+body{
+    margin: 10;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+}
+
+header{
+    padding: 0.5em;
+
+    flex: 0 50px;
+    background: hsl(223, 57%, 38%);
+    color: white;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+  
+main{
+    flex: 1;
+    font-size: 30px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    text-align:left;
+    font-size: 1.5vh;
+    background-color: black;
+    color: white;
+}
+
+h1{
+    font-family: 'Sixtyfour', sans-serif;
+    font-size: 1fr;
+}
+
+li{
+    display:inline;
+}
