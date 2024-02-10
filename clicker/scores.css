@@ -1,2 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+
+img{
+    border-radius:5px;
+}
+
+#other_placements{
+    color:purple;
+}
+.first{
+    color:gold;
+}
+
+.second{
+    color:silver;
+}
+
+.third{
+    color:rgb(143, 70, 70);
+}
