@@ -64,11 +64,15 @@ main
 .update_notifications
 {
     flex:1;
+    max-width:33.33%;
+    padding: 0.25em;
 }
 
 .not_update_notifications
 {
     flex:2;
+    max-width:66.67%;
+    padding: 0.25em;
 }
 
 

@@ -3,19 +3,26 @@
 
 img{
     border-radius:5px;
+    padding:0.1em;
 }
 
-#other_placements{
+.other_placements{
     color:purple;
 }
-.first{
+#first{
     color:gold;
 }
 
-.second{
+#second{
     color:silver;
 }
 
-.third{
+#third{
     color:rgb(143, 70, 70);
 }
+
+/* .top_list
+{
+    padding: 0.1em;
+    border: 5px solid rgb(69, 145, 233)
+} */
