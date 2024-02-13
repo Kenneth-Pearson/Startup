@@ -20,43 +20,39 @@ main
     border-radius: 5px;
 }
 
-/* Background Animation */
-/*head{
-    animation: colors 45s infinite;
-}
-
-@keyframes colors
+.start_game button
 {
-    from{
-        background-color:red;
-    }
-
-    12.5%{
-        background-color:orange;
-    }
-
-    25%{
-        background-color:yellow;
-    }
-    37.5%{
-        background-color:lime;
-    }
-
-    50%{
-        background-color:green;
-    }
-
-    62.5%{
-        background-color:cyan;
-    }
-    75%{
-        background-color:blue;
-    }
-    87.5%{
-        background-color:purple;
-    }
-    to{
-        background-color:red;
-    }
+    background-color: rgb(30, 119, 119); 
+    border: 5px solid rgb(68, 172, 172);
+    /* border-left: rgb(197, 215, 221);
+    border-top: rgb(68, 148, 175);
+    border-bottom: rgb(16, 57, 90);
+    border-right: rgb(16, 57, 90); */
+    border-radius: 15px;
+    color: rgb(73, 11, 73);
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    cursor: pointer;
 }
-*/
+
+.restart_game button
+{
+    background-color: rgb(22, 15, 87); 
+    border: 5px solid rgb(17, 19, 107);
+    /* border-left: rgb(197, 215, 221);
+    border-top: rgb(68, 148, 175);
+    border-bottom: rgb(16, 57, 90);
+    border-right: rgb(16, 57, 90); */
+    border-radius: 15px;
+    color: rgb(222, 243, 36);
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    cursor: pointer;
+}
+

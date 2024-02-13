@@ -1,6 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
 
+/* Background Animation */
+body {
+    animation: colors 30s infinite;
+  }
+@keyframes colors
+{
+    0%, 100%{
+        background-color:red;
+    }
+
+    12.5%{
+        background-color:orange;
+    }
+
+    25%{
+        background-color:yellow;
+    }
+    37.5%{
+        background-color:lime;
+    }
+
+    50%{
+        background-color:green;
+    }
+
+    62.5%{
+        background-color:cyan;
+    }
+    75%{
+        background-color:blue;
+    }
+    87.5%{
+        background-color:purple;
+    }
+}
+
+
 *{
     font-family: 'Pixelify Sans', sans-serif;
     text-align: center;
@@ -9,6 +46,42 @@
 html{
     height: 100%;
 }
+
+li{
+    display:inline;
+}
+
+button:hover {
+    /* Your styles for the hover state */
+    background-color: #272323; /* Example: change background color */
+    color: white; /* Example: change text color */
+    /* border-left: rgb(197, 215, 221);
+    border-top: rgb(68, 148, 175);
+    border-bottom: rgb(16, 57, 90);
+    border-right: rgb(16, 57, 90); */
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+  }
+
+button:active {
+    /* Your styles for the clicked state */
+    background-color: #d35400; /* Example: change background color */
+    color: white; /* Example: change text color */
+    border: 5px solid rgb(241, 127, 33);
+    border-radius: 15px;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    cursor: pointer;
+}  
+  
 
 
 body{
@@ -19,15 +92,15 @@ body{
 }
 
 header{
-    padding: 0.5em;
+    padding: 0.25em;
 
-    flex: 0 50px;
+    flex: 0 40px;
     background: hsl(0, 0%, 0%);
     color: white;
     border-radius: 5px;
   
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -55,6 +128,4 @@ h1{
     font-size: 1fr;
 }
 
-li{
-    display:inline;
-}
+
