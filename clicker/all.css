@@ -3,7 +3,7 @@
 
 /* Background Animation */
 body {
-    animation: colors 30s infinite;
+    animation: colors 20s infinite;
   }
 @keyframes colors
 {

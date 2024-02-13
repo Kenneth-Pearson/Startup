@@ -56,3 +56,20 @@ main
     cursor: pointer;
 }
 
+.container
+{
+    display: flex;
+}
+
+.update_notifications
+{
+    flex:1;
+}
+
+.not_update_notifications
+{
+    flex:2;
+}
+
+
+

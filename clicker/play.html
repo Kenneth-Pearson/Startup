@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="play.css" />
         <link rel="stylesheet" href="all.css"/>
+        <link rel="stylesheet" href="play.css" />
         <link rel="icon" href="better_logo.ico" />
     </head>
     <body>
@@ -18,28 +18,32 @@
                     </menu>
                 </nav>
         </header>
-        <main>
+        <main class="container">
+            <div> <!-- Demonstration of Scoreboard Notifications...-->
+                <ul class="update_notifications"> 
+                    <li class="player_name">TSwizzle took 5th place on the leaderboard!</li>
+                    <li class="player_name">Ethan took 3rd place on the leaderboard!</li>
+                </ul>
+            </div>
+        <div class="not_update_notifications">  
             <div> <!-- Gameplay -->
                 <ul> <!-- Gameplay Controls -->
                     <li class="start_game"><button>Play</button></li>
                     <li class="restart_game"><button>Restart</button></li>
-                    <ul> <!-- Gameplay Info -->
-                        <li id="time_till_start">Time Till Shootin':</li> --
-                        <li id="seconds_remaining">Time Remaining:</li> 14
-                        <li>Player: <span class="player_name">Hot_Stuff</span></li>
-                    </ul>
-                </ul>
-        </div>
-            <div> <!-- Demonstration of Scoreboard Notifications...-->
-                <ul class="update_notifications" id ="notifications"> 
-                    <li class="player_name">TSwizzle took 5th place on the leaderboard!
-                    <li class="player_name">Ethan took 3rd place on the leaderboard!</li>
+                    <li>
+                        <ul> <!-- Gameplay Info -->
+                            <li id="time_till_start">Time Till Shootin':</li> <!-- Removed stray dashes ("--") for cleanliness -->
+                            <li id="seconds_remaining">Time Remaining: 14</li>
+                            <li>Player: <span class="player_name">Hot_Stuff</span></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div> <!-- Gameplay Required Images -->
-                <img src="space_rock_1.png" width="100"></img>
-                <img src="space_rock_2.png" width="100"></img>
+                <img src="space_rock_1.png" width="100">
+                <img src="space_rock_2.png" width="100">
             </div>
+        </div>    
         </main>
         <footer id="footer"> <!-- Author -->
             <ul>
