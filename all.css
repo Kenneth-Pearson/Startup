@@ -4,6 +4,12 @@
 * {
     margin: 0;
 }
+
+a:link, a:visited
+{
+color:lime;
+text-decoration:none;
+}
 /* Background Animation */
 body {
     animation: colors 20s infinite;

@@ -38,3 +38,15 @@ At the end of each match, the scoreboard will update in realtime to reflect the 
 Sun picture will be replaced with a space picture of the day from this API (https://github.com/nasa/apod-api)
 
 # CSS Deliverable
+## 30% Header, footer, and main content body
+Header, main, and footer are properly separated
+## 20% Navigation elements
+Links got a color change
+## 10% Responsive to window resizing
+The website scales to window size
+## 20% Application elements
+Animated background
+## 10% Application text content
+Two fonts used
+## 10% Application images
+Border Radius applied to image on Scores page
