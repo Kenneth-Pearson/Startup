@@ -8,17 +8,22 @@ img{
 
 .other_placements{
     color:purple;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
 #first{
     color:gold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
 
 #second{
     color:silver;
+    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
 
 #third{
     color:rgb(143, 70, 70);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
 
 /* .top_list
