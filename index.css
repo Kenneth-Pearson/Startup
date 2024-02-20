@@ -19,7 +19,7 @@
 
 .identify_user
 {
-    font-size: 5vh;
+    font-size: 10vh;
 }
 
 input[type="submit"]
@@ -27,13 +27,20 @@ input[type="submit"]
   /* Your styles here */
   background-color: #4CAF50; /* Example: Change background color */
   color: white; /* Example: Change text color */
-  padding: 14px 20px; /* Example: Add padding */
-  border: none; /* Example: Remove border */
+  padding: 14px 20px; /* Example: Add padding */ /* Example: Remove border */
   border-radius: 4px; /* Example: Round corners */
-  cursor: pointer; /* Example: Change cursor on hover */
+  cursor: pointer;
+  border: 5px solid rgb(0, 0, 0); /* Example: Change cursor on hover */
 }
 
 input[type="submit"]:hover
 {
-  background-color: #62b666; /* Example: Change background color on hover */
+  background-color: #7bce7f;
+  border: 5px solid rgb(0, 0, 0); /* Example: Change background color on hover */
+} 
+
+input[type="submit"]:active
+{
+  background-color: #7bce7f;
+  border: 5px solid rgb(0, 0, 0); /* Example: Change background color on hover */
 } 

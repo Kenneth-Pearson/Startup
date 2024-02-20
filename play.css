@@ -22,14 +22,14 @@ main
 
 .start_game button
 {
-    background-color: rgb(30, 119, 119); 
-    border: 5px solid rgb(68, 172, 172);
+    background-color: #4CAF50;
+    border: 5px solid rgb(0, 0, 0);
     /* border-left: rgb(197, 215, 221);
     border-top: rgb(68, 148, 175);
     border-bottom: rgb(16, 57, 90);
     border-right: rgb(16, 57, 90); */
     border-radius: 15px;
-    color: rgb(73, 11, 73);
+    color: white;
     padding: 6px 12px;
     text-align: center;
     text-decoration: none;
@@ -41,7 +41,7 @@ main
 .restart_game button
 {
     background-color: rgb(22, 15, 87); 
-    border: 5px solid rgb(17, 19, 107);
+    border: 5px solid rgb(0, 0, 0);
     /* border-left: rgb(197, 215, 221);
     border-top: rgb(68, 148, 175);
     border-bottom: rgb(16, 57, 90);
@@ -58,7 +58,7 @@ main
 
 button:hover {
     /* Your styles for the hover state */
-    background-color: #272323; /* Example: change background color */
+    background-color: #7bce7f; /* Example: change background color */
     color: white; /* Example: change text color */
     /* border-left: rgb(197, 215, 221);
     border-top: rgb(68, 148, 175);
@@ -75,9 +75,9 @@ button:hover {
 
 button:active {
     /* Your styles for the clicked state */
-    background-color: #d35400; /* Example: change background color */
+    background-color: #7bce7f; /* Example: change background color */
     color: white; /* Example: change text color */
-    border: 5px solid rgb(241, 127, 33);
+    border: 5px solid rgb(0, 0, 0);
     border-radius: 15px;
     padding: 6px 12px;
     text-align: center;

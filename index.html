@@ -3,16 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="index.css" />
+        <!-- <link rel="stylesheet" href="index.css" /> -->
         <link rel="icon" href="better_logo.ico" />
         <link rel="stylesheet" href="all.css"/>
+        <link rel="stylesheet" href="index.css" />
+        <script src="index.js"></script>
     </head>
     <body>
         <header>
             <h1>Welcome! Login to play!</h1>
                 <nav> <!-- Application Navigation -->
                     <menu>
-                        <li><a href="index.html">Home</a> 🔄</li>
+                        <li><a href="index.html">Login</a> 🔄</li>
                         <li><a href="play.html" class="disabled">Play</a> 🔒</li>
                         <li><a href="scores.html">Scoreboard</a> 🔒</li>
                     </menu>
@@ -25,13 +27,13 @@
                     <label for="name" Enter your username: ></label>
                     <input type="text" name="name" id="name" placeholder="Username:_____" required/>
                 </div>
-                <div class="identify_user">
+                <!-- <div class="identify_user">
                     <label for="password" Enter your password: ></label>
                     <input type="text" name="password" id="password" placeholder="Password:_____"required/>
-                </div>
+                </div> -->
                 <div class="identify_user">
                     <label for="login"></label>
-                    <input type="submit" value="Login"/>
+                    <input type="submit" value="Login" onclick="login()"/>
                 </div>
             </form>
         
