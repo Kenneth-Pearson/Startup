@@ -10,18 +10,18 @@ img{
     color:purple;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
-#first{
+#first_placement{
     color:gold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
 
-#second{
+#second_placement{
     color:silver;
     
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
 
-#third{
+#third_placement{
     color:rgb(143, 70, 70);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
 }
