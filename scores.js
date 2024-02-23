@@ -10,6 +10,12 @@
 //var element = document.getElementById("exampleElement");
 //var integerValue = parseInt(element.textContent, 10);
 
+function logout() {
+    const nameEl = document.querySelector("#name");
+    localStorage.setItem("username", "Login_To_Track_Your_Score");
+    window.location.href = "play.html";
+}
+
 var leaderboard = new Array(11);
 function create_display()
 {

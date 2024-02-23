@@ -12,7 +12,7 @@
             <h1>Shoot accurately for a better score!</h1>
                 <nav> <!-- Application Navigation & Player Identity -->
                     <menu>
-                        <li><a href="index.html">Logout</a> 🏠</li>
+                        <li><a href="index.html" onclick="logout()">Logout</a> 🏠</li>
                         <li><a href="play.html">Play</a> 🔄</li>
                         <li><a href="scores.html">Scoreboard</a> 🏆</li>
                     </menu>
@@ -32,8 +32,9 @@
                     <li>
                         <ul> <!-- Gameplay Info -->
                             <li class="start_game"><button>Start Game</button></li>
-                            <li id="time_till_start">Time Till Shootin': -</li> <!-- Removed stray dashes ("--") for cleanliness -->
+                            <!-- <li id="time_till_start">Time Till Shootin': -</li> Removed stray dashes ("--") for cleanliness -->
                             <li id="seconds_remaining">Time Remaining: -</li>
+                            <li id="score">Score: -</li>
                             <li>Player: <span id=player_name>Login_To_Track_Your_Score</span></li>
                         </ul>
                     </li>
