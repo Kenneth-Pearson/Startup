@@ -1,4 +1,11 @@
 // This is play.js
+
+disableVisibility("rock1");
+disableVisibility("rock2");
+updatePlayerName();
+var counter = 0;
+document.getElementById("score").innerText = "Score: -";
+
 function updatePlayerName() {
     const playerNameSpan = document.getElementById("player_name");
     console.log(playerNameSpan);
@@ -9,15 +16,13 @@ function updatePlayerName() {
     }
 }
 
-updatePlayerName();
-
 function logout() {
   const nameEl = document.querySelector("#name");
   localStorage.setItem("username", "Login_To_Track_Your_Score");
   window.location.href = "play.html";
 }
 
-function timer(seconds) {
+async function timer(seconds) {
   if (document.getElementById("start_Button").getAttribute("disabled") === "true") 
   {
     return;
@@ -36,4 +41,25 @@ function timer(seconds) {
         clearInterval(intervalTimer); // Stop the timer when countdown reaches 0
       }
   }, intervalDuration);
+}
+
+function disableVisibility(id) {
+  var divElement = document.getElementById(id);
+  divElement.style.visibility = 'hidden';
+}
+
+function enableVisibility(id) {
+  var divElement = document.getElementById(id);
+  divElement.style.visibility = 'visible';
+}
+
+add_score()
+{
+  counter++;
+  document.getElementById("score").innerText = "Score: " + counter;
+}
+
+reset_score()
+{
+  document.getElementById("score").innerText = "Score: -";
 }

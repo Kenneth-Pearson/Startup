@@ -10,7 +10,7 @@ ssh -i production.pem ubuntu@cosmicclickerchallenge.click
 ## Play.html
 https://startup.cosmicclickerchallenge.click/play.html
 ## Deploying files to the server
-cd clicker
+cd Startup
 ./deployFiles.sh -k production.pem -h cosmicclickerchallenge.click  -s startup
 ## API I want to use
 https://github.com/nasa/apod-api
