@@ -1,4 +1,6 @@
 // This is scores.js
+preJSONleaderboard = localStorage.getItem('leaderboard');
+leaderboard = JSON.parse(preJSONleaderboard);
 
 function logout() {
     const nameEl = document.querySelector("#name");

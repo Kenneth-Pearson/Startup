@@ -9,15 +9,16 @@ document.getElementById("start_Button").removeAttribute("disabled");
 var score_counter = 0;
 var num_clicks = 0;
 document.getElementById("score").innerText = "Score: -";
-add_clicks_bool = false;
+track_clicks_bool = false;
 
 var isFirstVisit = localStorage.getItem("firstVisit");
-if (isFirstVisit === null) 
+if(isFirstVisit === null) 
 {
     localStorage.setItem("firstVisit", "false");
     var leaderboard = new Array(11);
     create_display();
 }
+
 function create_display()
 {
 leaderboard[0] = ["None", "0"];
@@ -31,6 +32,8 @@ leaderboard[7] = ["None", "0"];
 leaderboard[8] = ["None", "0"];
 leaderboard[9] = ["None", "0"];
 leaderboard[10] = ["Player_Space", "-1"];
+let leaderboardJSON = JSON.stringify(leaderboard);
+localStorage.setItem('leaderboard', leaderboardJSON);
 };
 
 // HUGE DEAL
@@ -39,6 +42,8 @@ function sort_scores()
   if(document.getElementById("player_name").innerText !== 'Login_To_Track_Your_Score')
   {
     leaderboard = leaderboard.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
+    let leaderboardJSON = JSON.stringify(leaderboard);
+    localStorage.setItem('leaderboard', leaderboardJSON);
 // console.log(my_arr);
 //names
 // document.getElementById("first_name").textContent = leaderboard[0][0];
@@ -95,7 +100,7 @@ async function timer(seconds) {
   let i = seconds;
   reset_score();
   document.getElementById("start_Button").setAttribute("disabled", true);
-  add_clicks_bool = true;
+  track_clicks_bool = true;
   num_clicks--;
 
   const intervalDuration = 1000; //1000 milliseconds
@@ -106,7 +111,7 @@ async function timer(seconds) {
       i--;
       //game end
       if (i < 0) {
-        add_clicks_bool = false;
+        track_clicks_bool = false;
         document.getElementById("seconds_remaining").innerText = "Time Remaining: -";
         document.getElementById("start_Button").removeAttribute("disabled");
         disableVisibility("rock_1");
@@ -114,6 +119,7 @@ async function timer(seconds) {
         clearInterval(intervalTimer); // Stop the timer when countdown reaches 0
         leaderboard[10][0] = document.getElementById("player_name").innerText;
         leaderboard[10][1] = document.getElementById("score").innerText;
+        sort_scores();
       }
   }, intervalDuration);
 }
@@ -168,7 +174,7 @@ function calculate_score()
 //track missed and successful clicks
 function add_num_clicks()
 {
-  if (add_clicks_bool === true)
+  if (track_clicks_bool === true)
   {
     num_clicks++;
     if (num_clicks === 0)
