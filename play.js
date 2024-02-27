@@ -73,10 +73,18 @@ function enableVisibility(id) {
   divElement.style.visibility = 'visible';
 }
 
-//math
+//change rock location 
+function location_randomizer()
+{
+  var x = Math.random()*162-81;
+  var y = Math.random()*9-4.5;
+  rock_1.style.transform = "translate(" + x.toString() + "vh, " + y.toString() + "vw)";
+}
+
+//accuracy formula
 function calculate_score()
-{                                       //x  ,  y
-  rock_1.style.transform = "translate(81vh, 9vw)";
+{         
+  location_randomizer()       
   score_counter++;
   if (num_clicks === 0)
   {
