@@ -119,8 +119,8 @@ button:active {
     margin-bottom:25vh;
 }
 
-
-.gameplay_images img {
+/* rotation animation conflicts with location randomizer*/
+/* .gameplay_images img {
     animation: rotation 5s linear infinite;
   }
 @keyframes rotation
@@ -134,7 +134,7 @@ button:active {
     100%{
     transform: rotate(360deg);   
     }
-}
+} */
 
 
 

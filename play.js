@@ -75,8 +75,8 @@ function enableVisibility(id) {
 
 //math
 function calculate_score()
-{
-  rock_1.style.transform = "translate(20px, 30px)";
+{                                       //x  ,  y
+  rock_1.style.transform = "translate(81vh, 9vw)";
   score_counter++;
   if (num_clicks === 0)
   {
