@@ -1,5 +1,6 @@
 // This is play.js
 
+var rock_1 = document.getElementById("rock_1");
 disableVisibility("rock_1");
 disableVisibility("rock_2");
 updatePlayerName();
@@ -49,13 +50,12 @@ async function timer(seconds) {
     document.getElementById("seconds_remaining").innerText = "Time Remaining: " + i;
       i--;
       //game end
-      if (i <= 0) {
+      if (i < 0) {
         add_clicks_bool = false;
         document.getElementById("seconds_remaining").innerText = "Time Remaining: -";
         document.getElementById("start_Button").removeAttribute("disabled");
         disableVisibility("rock_1");
         disableVisibility("rock_2");
-        reset_score();
         clearInterval(intervalTimer); // Stop the timer when countdown reaches 0
       }
   }, intervalDuration);
@@ -76,8 +76,16 @@ function enableVisibility(id) {
 //math
 function calculate_score()
 {
+  rock_1.style.transform = "translate(20px, 30px)";
   score_counter++;
-  document.getElementById("score").innerText = "Score: " + Math.floor(score_counter*(score_counter/num_clicks));
+  if (num_clicks === 0)
+  {
+    document.getElementById("score").innerText = "Score: " + score_counter;
+  }
+  else
+  {  
+    document.getElementById("score").innerText = "Score: " + Math.floor(score_counter*(score_counter/num_clicks));
+  }
 }
 
 //track missed and successful clicks
@@ -86,7 +94,14 @@ function add_num_clicks()
   if (add_clicks_bool === true)
   {
     num_clicks++;
+    if (num_clicks === 0)
+    {
+      document.getElementById("score").innerText = "Score: -";
+    }
+    else
+    {
     document.getElementById("score").innerText = "Score: " + Math.floor(score_counter*(score_counter/num_clicks));
+    }
   }
 }
 
