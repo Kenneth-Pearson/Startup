@@ -1,6 +1,7 @@
 // This is play.js
 
 var rock_1 = document.getElementById("rock_1");
+var rock_2 = document.getElementById("rock_2");
 disableVisibility("rock_1");
 disableVisibility("rock_2");
 updatePlayerName();
@@ -76,9 +77,21 @@ function enableVisibility(id) {
 //change rock location 
 function location_randomizer()
 {
+  disableVisibility("rock_1");
+  disableVisibility("rock_2");
+  var rock_rng = Math.random();
   var x = Math.random()*162-81;
-  var y = Math.random()*9-4.5;
-  rock_1.style.transform = "translate(" + x.toString() + "vh, " + y.toString() + "vw)";
+  var y = Math.random()*18-9;
+  if (rock_rng > 0.5)
+  {
+    rock_1.style.transform = "translate(" + x.toString() + "vh, " + y.toString() + "vw)";
+    enableVisibility("rock_1");
+  }
+  else
+  {
+    rock_2.style.transform = "translate(" + x.toString() + "vh, " + y.toString() + "vw)";  
+    enableVisibility("rock_2");
+  }
 }
 
 //accuracy formula
