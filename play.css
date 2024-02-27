@@ -120,4 +120,21 @@ button:active {
 }
 
 
+.gameplay_images img {
+    animation: rotation 5s linear infinite;
+  }
+@keyframes rotation
+{
+    0%{
+    transform: rotate(0deg);
+    }
+    50%{
+    transform: rotate(180deg);
+    }
+    100%{
+    transform: rotate(360deg);   
+    }
+}
+
+
 

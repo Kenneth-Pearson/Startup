@@ -34,6 +34,7 @@ async function timer(seconds) {
     return; 
   }
   //game start
+  document.getElementById("seconds_remaining").innerText = "Time Remaining: " + (seconds+1);
   enableVisibility("rock_1");
   let i = seconds;
   reset_score();
