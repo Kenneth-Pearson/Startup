@@ -32,23 +32,33 @@ leaderboard[9] = [tenth_name, tenth_score];
 leaderboard[10] = ["Testing", "50"];
 };
 
-update_display()
+// HUGE DEAL
+function sort_scores()
 {
-    leaderboard.sort(function(a,b){
-        return a[1]-b[1];
-    });
-    //first_update
-    localStorage.setItem("first_name", leaderboard[0][0]);
-    var storedValue = localStorage.getItem("first_name");
-    document.getElementById("first_name").textContent = storedValue;
-    localStorage.setItem("first_name", leaderboard[0][1]);
-    var storedValue = localStorage.getItem("first_score");
-    document.getElementById("first_name").textContent = storedValue;
+// if name != Login_To_Track_Your_Score
+//{
+    leaderboard.sort((a, b) => b[0] - a[0]);
+    console.log(my_arr);
+//}    
+}
+
+// update_display()
+// {
+//     leaderboard.sort(function(a,b){
+//         return a[1]-b[1];
+//     });
+//     //first_update
+//     localStorage.setItem("first_name", leaderboard[0][0]);
+//     var storedValue = localStorage.getItem("first_name");
+//     document.getElementById("first_name").textContent = storedValue;
+//     localStorage.setItem("first_name", leaderboard[0][1]);
+//     var storedValue = localStorage.getItem("first_score");
+//     document.getElementById("first_name").textContent = storedValue;
     
-};
+// };
 
-update_display();
+// update_display();
 
 
-console.log(leaderboard[0])
+// console.log(leaderboard[0])
 
