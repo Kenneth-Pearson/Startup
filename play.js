@@ -27,7 +27,7 @@ leaderboard[2] = ["None", "0"];
 leaderboard[3] = ["None", "0"];
 leaderboard[4] = ["None", "0"];
 leaderboard[5] = ["None", "0"];
-leaderboard[6] = ["None", "0"];
+leaderboard[6] = ["Test_Score", "10"];
 leaderboard[7] = ["None", "0"];
 leaderboard[8] = ["None", "0"];
 leaderboard[9] = ["None", "0"];
@@ -44,6 +44,7 @@ function sort_scores()
     leaderboard = leaderboard.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
     let leaderboardJSON = JSON.stringify(leaderboard);
     localStorage.setItem('leaderboard', leaderboardJSON);
+    update_board();
 // console.log(my_arr);
 //names
 // document.getElementById("first_name").textContent = leaderboard[0][0];
@@ -118,7 +119,8 @@ async function timer(seconds) {
         disableVisibility("rock_2");
         clearInterval(intervalTimer); // Stop the timer when countdown reaches 0
         leaderboard[10][0] = document.getElementById("player_name").innerText;
-        leaderboard[10][1] = document.getElementById("score").innerText;
+        let justNumber = document.getElementById("score").innerText.replace("Score: ", "");
+        leaderboard[10][1] = justNumber;
         sort_scores();
       }
   }, intervalDuration);
