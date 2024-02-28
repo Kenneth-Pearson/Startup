@@ -36,15 +36,51 @@ let leaderboardJSON = JSON.stringify(leaderboard);
 localStorage.setItem('leaderboard', leaderboardJSON);
 };
 
+function score_notifcations() 
+{
+  if (new_score !== new_lowest_score)
+  {
+    for(let i = 0; i < leaderboard.length; i++)
+    {
+      if(leaderboard[i][1] === document.getElementById("score").innerText && leaderboard.replace("Score: ", "") && leaderboard[i][0] === document.getElementById("player_name").innerText)
+      {
+        if(i === 0) //first
+        {
+          document.getElementById("score_update").innerText = document.getElementById("player_name").innerText + " took 1st on the leaderboard.";
+        }
+        if(i === 1) //second
+        {
+          document.getElementById("score_update").innerText = document.getElementById("player_name").innerText + " took 2nd on the leaderboard.";
+        }
+        if(i===2) //third
+        {
+          document.getElementById("score_update").innerText = document.getElementById("player_name").innerText + " took 3rd on the leaderboard.";
+        }
+        else //fourth-tenth
+        {
+          document.getElementById("score_update").innerText = document.getElementById("player_name").innerText + " took " + i + "th on the leaderboard.";
+        }
+      }
+    }
+    }
+    else // You scored ___ points.
+    {
+      document.getElementById("score_update").innerText = "You scored " + document.getElementById("score").innerText.replace("Score: ", "") + " points.";
+    }
+} 
+
 // HUGE DEAL
 function sort_scores()
 {
   if(document.getElementById("player_name").innerText !== 'Login_To_Track_Your_Score')
   {
+    var new_score = leaderboard[10][1];
     leaderboard = leaderboard.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
+    var new_lowest_score = leaderboard[10][1];
     let leaderboardJSON = JSON.stringify(leaderboard);
     localStorage.setItem('leaderboard', leaderboardJSON);
     update_board();
+    score_notifcations();
 // console.log(my_arr);
 //names
 // document.getElementById("first_name").textContent = leaderboard[0][0];
@@ -89,7 +125,7 @@ function logout() {
 }
 
 //logic for the videogame
-async function timer(seconds) {
+function timer(seconds) {
   //prevent button spam
   if (document.getElementById("start_Button").getAttribute("disabled") === "true") 
   {
@@ -138,14 +174,14 @@ function enableVisibility(id) {
   divElement.style.visibility = 'visible';
 }
 
-//change rock location 
+//change rock location AND rock 
 function location_randomizer()
 {
   disableVisibility("rock_1");
   disableVisibility("rock_2");
   var rock_rng = Math.random();
-  var x = Math.random()*162-81;
-  var y = Math.random()*18-9;
+  var x = Math.random()*140-70;//*162-81; *140-70;
+  var y = Math.random()*14-7;//*18-9;   *14-7;
   if (rock_rng > 0.5)
   {
     rock_1.style.transform = "translate(" + x.toString() + "vh, " + y.toString() + "vw)";
