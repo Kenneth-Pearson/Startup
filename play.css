@@ -1,140 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
 
-main
-{
-    display:flex;
-    flex-direction:row;
-    height: 100vh;
-    font-size: 2.5vh;
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  font-size: 2.5vh;
 }
 
-#start_game{
-    color:rgb(72, 170, 52)   
+#start_game {
+  color: rgb(72, 170, 52);
 }
 
-.update_notifications
-{
-    background-color: gray;
-    opacity: 0.5;
-    border-radius: 5px;
+.update_notifications {
+  background-color: gray;
+  opacity: 0.5;
+  border-radius: 5px;
 }
 
-.start_Button button
-{
-    background-color: #4CAF50;
-    border: 5px solid rgb(0, 0, 0);
-    /* border-left: rgb(197, 215, 221);
+.start_Button button {
+  background-color: #4caf50;
+  border: 5px solid rgb(0, 0, 0);
+  /* border-left: rgb(197, 215, 221);
     border-top: rgb(68, 148, 175);
     border-bottom: rgb(16, 57, 90);
     border-right: rgb(16, 57, 90); */
-    border-radius: 15px;
-    color: white;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-    cursor: pointer;
+  border-radius: 15px;
+  color: white;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  cursor: pointer;
 }
 
-.restart_game button
-{
-    background-color: rgb(22, 15, 87); 
-    border: 5px solid rgb(0, 0, 0);
-    /* border-left: rgb(197, 215, 221);
+.restart_game button {
+  background-color: rgb(22, 15, 87);
+  border: 5px solid rgb(0, 0, 0);
+  /* border-left: rgb(197, 215, 221);
     border-top: rgb(68, 148, 175);
     border-bottom: rgb(16, 57, 90);
     border-right: rgb(16, 57, 90); */
-    border-radius: 15px;
-    color: rgb(222, 243, 36);
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-    cursor: pointer;
+  border-radius: 15px;
+  color: rgb(222, 243, 36);
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  cursor: pointer;
 }
 
 button:hover {
-    /* Your styles for the hover state */
-    background-color: #7bce7f; /* Example: change background color */
-    color: white; /* Example: change text color */
-    /* border-left: rgb(197, 215, 221);
+  /* Your styles for the hover state */
+  background-color: #7bce7f; /* Example: change background color */
+  color: white; /* Example: change text color */
+  /* border-left: rgb(197, 215, 221);
     border-top: rgb(68, 148, 175);
     border-bottom: rgb(16, 57, 90);
     border-right: rgb(16, 57, 90); */
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-  }
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+}
 
 button:active {
-    /* Your styles for the clicked state */
-    background-color: #7bce7f; /* Example: change background color */
-    color: white; /* Example: change text color */
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-    cursor: pointer;
-}  
-
-.container
-{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    height: 100%;
+  /* Your styles for the clicked state */
+  background-color: #7bce7f; /* Example: change background color */
+  color: white; /* Example: change text color */
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  cursor: pointer;
 }
 
-.update_notifications
-{
-    display:flex;
-    flex:0;
-    width: 15vw;
-    height: 100%;
-    justify-items: left;
-    flex-direction:column;
-    width: 100%;
-    padding:0;
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
 }
 
-.not_update_notifications
-{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1%;
-    margin-bottom:25vh;
+.update_notifications {
+  display: flex;
+  flex: 0;
+  width: 15vw;
+  height: 100%;
+  justify-items: left;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+.not_update_notifications {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 25vh;
 }
 
 /* rotation animation conflicts with location randomizer*/
 /* .gameplay_images img {
-    animation: rotation 5s linear infinite;
-  }
-@keyframes rotation
-{
-    0%{
+  animation: rotation 5s linear infinite;
+}
+@keyframes rotation {
+  from {
     transform: rotate(0deg);
-    }
-    50%{
-    transform: rotate(180deg);
-    }
-    100%{
-    transform: rotate(360deg);   
-    }
+  }
+  to {
+    transform: rotate(360deg);
+  }
 } */
-
-
-

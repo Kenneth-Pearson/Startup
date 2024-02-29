@@ -1,58 +1,83 @@
-<!DOCTYPE html> <!-- This is play.html -->
+<!DOCTYPE html>
+<!-- This is play.html -->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="all.css"/>
-        <link rel="stylesheet" href="play.css" />
-        <link rel="icon" href="better_logo.ico" />
-    </head>
-    <body onclick="add_num_clicks()">
-        <header>
-            <h1>Shoot accurately for a better score!</h1>
-                <nav> <!-- Application Navigation & Player Identity -->
-                    <menu>
-                        <li><a href="index.html" onclick="logout()">Logout</a> 🏠</li>
-                        <li><a href="play.html">Play</a> 🔄</li>    
-                        <li><a href="scores.html">Scoreboard</a> 🏆</li>
-                    </menu>
-                </nav>
-        </header>
-        <main class="container">
-            <!-- Demonstration of Scoreboard Notifications...-->
-                <ul class="update_notifications"> 
-                    <li id="score_update">TSwizzle took 5th place on the leaderboard!</li>
-                    <!-- <li class="player_update">Ethan took 3rd place on the leaderboard!</li> -->
-                </ul>
-        <div class="not_update_notifications">  
-            <div class="gameplay_info"> <!-- Gameplay -->
-                <ul> <!-- Gameplay Controls -->
-                    <!-- <li class="start_game"><button>Start Game</button></li> -->
-                    <!-- <li class="restart_game"><button>Restart</button></li> -->
-                    <li>
-                        <ul> <!-- Gameplay Info -->                                  <!-- set timer 1 lower than intended run time -->
-                            <li class="start_Button"><button id="start_Button" onclick="timer(29)">Start Game</button></li>
-                            <!-- <li id="time_till_start">Time Till Shootin': -</li> Removed stray dashes ("--") for cleanliness -->
-                            <li id="seconds_remaining">Time Remaining: -</li>
-                            <li id="score">Score: -</li>
-                            <li>Player: <span id=player_name>Login_To_Track_Your_Score</span></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="gameplay_images"> <!-- Gameplay Required Images -->
-                <img src="space_rock_1.png" id="rock_1" width="100" onclick="calculate_score()">
-                <img src="space_rock_2.png" id="rock_2" width="100" onclick="calculate_score()">
-            </div>
-        </div>    
-        </main>
-        <footer id="footer"> <!-- Author -->
-            <ul>
-                <li><span>Devilishly Handsome Author:</span></li>
-                <li><a href="https://github.com/Kenneth-Pearson/Startup">Github</a></li>
-            </ul>
-        </footer>
-    </body>
-    <script src="play.js"></script>
-    <script src="scores.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="all.css" />
+    <link rel="stylesheet" href="play.css" />
+    <link rel="icon" href="better_logo.ico" />
+  </head>
+  <body onclick="add_num_clicks()">
+    <header>
+      <h1>Shoot accurately for a better score!</h1>
+      <nav>
+        <!-- Application Navigation & Player Identity -->
+        <menu>
+          <li><a href="index.html" onclick="logout()">Logout</a> 🏠</li>
+          <li><a href="play.html">Play</a> 🔄</li>
+          <li><a href="scores.html">Scoreboard</a> 🏆</li>
+        </menu>
+      </nav>
+    </header>
+    <main class="container">
+      <!-- Demonstration of Scoreboard Notifications...-->
+      <ul class="update_notifications">
+        <li id="score_update"></li>
+        <!-- <li class="player_update">Ethan took 3rd place on the leaderboard!</li> -->
+      </ul>
+      <div class="not_update_notifications">
+        <div class="gameplay_info">
+          <!-- Gameplay -->
+          <ul>
+            <!-- Gameplay Controls -->
+            <!-- <li class="start_game"><button>Start Game</button></li> -->
+            <!-- <li class="restart_game"><button>Restart</button></li> -->
+            <li>
+              <ul>
+                <!-- Gameplay Info -->
+                <!-- set timer 1 lower than intended run time -->
+                <li class="start_Button">
+                  <button id="start_Button" onclick="timer(29)">
+                    Start Game
+                  </button>
+                </li>
+                <!-- <li id="time_till_start">Time Till Shootin': -</li> Removed stray dashes ("--") for cleanliness -->
+                <li id="seconds_remaining">Time Remaining: -</li>
+                <li id="score">Score: -</li>
+                <li>
+                  Player:
+                  <span id="player_name">Login_To_Track_Your_Score</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="gameplay_images">
+          <!-- Gameplay Required Images -->
+          <img
+            src="space_rock_1.png"
+            id="rock_1"
+            width="100"
+            onclick="calculate_score()"
+          />
+          <img
+            src="space_rock_2.png"
+            id="rock_2"
+            width="100"
+            onclick="calculate_score()"
+          />
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <!-- Author -->
+      <ul>
+        <li><span>Devilishly Handsome Author:</span></li>
+        <li><a href="https://github.com/Kenneth-Pearson/Startup">Github</a></li>
+      </ul>
+    </footer>
+  </body>
+  <script src="play.js"></script>
+  <script src="scores.js"></script>
 </html>

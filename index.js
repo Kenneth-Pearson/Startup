@@ -14,7 +14,7 @@ function logout() {
 
 // function onYouTubeIframeAPIReady() {
 //   player = new YT.Player('player', {
-//     videoId: '9DcjaoYkAXU', // Replace with your actual video ID
+//     videoId: '9DcjaoYkAXU',
 //     events: {
 //       'onReady': onPlayerReady,
 //       'onStateChange': onPlayerStateChange
