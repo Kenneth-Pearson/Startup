@@ -1,29 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
 
-img{
-    border-radius:15px;
-    padding:0.1em;
+img {
+  border-radius: 15px;
+  padding: 0.1em;
 }
 
-.other_placements{
-    color:purple;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
+.other_placements {
+  color: purple;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000,
+    1px 1px 0 #fff;
 }
-#first_placement{
-    color:gold;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
-}
-
-#second_placement{
-    color:silver;
-    
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
+#first_placement {
+  color: gold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000,
+    1px 1px 0 #fff;
 }
 
-#third_placement{
-    color:rgb(143, 70, 70);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
+#second_placement {
+  color: silver;
+
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000,
+    1px 1px 0 #fff;
+}
+
+#third_placement {
+  color: rgb(143, 70, 70);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000,
+    1px 1px 0 #fff;
 }
 
 /* .top_list

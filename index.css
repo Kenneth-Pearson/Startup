@@ -1,37 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
 
-.disabled
-{
+.disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-#warning{
-    color: rgb(255, 255, 255);
-    font-style: bold;
-    font-size: 5vh;
-    background-color:#d10606;
-    border-bottom: black solid thick;
-    border-right: black solid thick;
-    border-radius: 5px;
+#warning {
+  color: rgb(255, 255, 255);
+  font-style: bold;
+  font-size: 5vh;
+  background-color: #d10606;
+  border-bottom: black solid thick;
+  border-right: black solid thick;
+  border-radius: 5px;
 }
 
-.identify_user
-{
-    font-size: 10vh;
+.identify_user {
+  font-size: 10vh;
 }
 
-#name
-{
+#name {
   width: 15vw;
   height: 5vh;
 }
 
-input[type="button"]
-{
+input[type="button"] {
   /* Your styles here */
-  background-color: #4CAF50; /* Example: Change background color */
+  background-color: #4caf50; /* Example: Change background color */
   color: white; /* Example: Change text color */
   padding: 14px 20px; /* Example: Add padding */ /* Example: Remove border */
   border-radius: 4px; /* Example: Round corners */
@@ -39,14 +35,12 @@ input[type="button"]
   border: 5px solid rgb(0, 0, 0); /* Example: Change cursor on hover */
 }
 
-input[type="button"]:hover
-{
+input[type="button"]:hover {
   background-color: #7bce7f;
   border: 5px solid rgb(0, 0, 0); /* Example: Change background color on hover */
-} 
+}
 
-input[type="button"]:active
-{
+input[type="button"]:active {
   background-color: #7bce7f;
   border: 5px solid rgb(0, 0, 0); /* Example: Change background color on hover */
-} 
+}
