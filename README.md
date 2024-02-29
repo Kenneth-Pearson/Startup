@@ -87,15 +87,15 @@ Border Radius applied to image on Scores page
 
 ## 20% JavaScript support for future login.
 
-Login brings you to Play.html and displays the username you entered
+Login brings you to Play.html and displays the username you entered.
 
 ## 20% JavaScript support for future database data.
 
-Scoreboard data is stored and sorted each game.
+Scoreboard data is stored and sorted at the end of each game.
 
 ## 20% JavaScript support for future WebSocket.
 
-Scoreboard data is stored and sorted each game.
+Scoreboard data is stored and sorted at the end of each game.
 
 ## 40% JavaScript support for your application's interaction logic.
 

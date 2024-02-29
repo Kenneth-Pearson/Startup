@@ -1,6 +1,5 @@
 // This is play.js
 create_board();
-
 let rock_1 = document.getElementById("rock_1");
 let rock_2 = document.getElementById("rock_2");
 disableVisibility("rock_1");
@@ -36,9 +35,7 @@ function create_board() {
 }
 
 function score_notifcations(new_score, new_lowest_score) {
-  // console.log("hello");
   if (new_score !== new_lowest_score) {
-    // console.log("hello");
     let x = document.getElementById("score").innerText.replace("Score: ", "");
     for (let i = 0; i < leaderboard.length; i++) {
       if (
@@ -65,7 +62,7 @@ function score_notifcations(new_score, new_lowest_score) {
           document.getElementById("score_update").innerText =
             document.getElementById("player_name").innerText +
             " took " +
-            (i + 1) +
+            (i + 2) +
             "th on the leaderboard.";
         }
       }
@@ -81,6 +78,7 @@ function score_notifcations(new_score, new_lowest_score) {
 
 // HUGE DEAL
 function sort_scores() {
+  //calls score_notifications
   if (
     document.getElementById("player_name").innerText !==
     "Login_To_Track_Your_Score"
@@ -92,38 +90,13 @@ function sort_scores() {
     localStorage.setItem("leaderboard", leaderboardJSON);
     // update_board();
     score_notifcations(new_score, new_lowest_score);
-    // console.log(my_arr);
-    //names
-    // document.getElementById("first_name").textContent = leaderboard[0][0];
-    // document.getElementById("second_name").textContent = leaderboard[1][0];
-    // document.getElementById("third_name").textContent = leaderboard[2][0];
-    // document.getElementById("fourth_name").textContent = leaderboard[3][0];
-    // document.getElementById("fifth_name").textContent = leaderboard[4][0];
-    // document.getElementById("sixth_name").textContent = leaderboard[5][0];
-    // document.getElementById("seventh_name").textContent = leaderboard[6][0];
-    // document.getElementById("eighth_name").textContent = leaderboard[7][0];
-    // document.getElementById("ninth_name").textContent = leaderboard[8][0];
-    // document.getElementById("tenth_name").textContent = leaderboard[9][0];
-    // //scores
-    // document.getElementById("first_score").textContent = leaderboard[0][1];
-    // document.getElementById("second_score").textContent = leaderboard[1][1];
-    // document.getElementById("third_score").textContent = leaderboard[2][1];
-    // document.getElementById("fourth_score").textContent = leaderboard[3][1];
-    // document.getElementById("fifth_score").textContent = leaderboard[4][1];
-    // document.getElementById("sixth_score").textContent = leaderboard[5][1];
-    // document.getElementById("seventh_score").textContent = leaderboard[6][1];
-    // document.getElementById("eighth_score").textContent = leaderboard[7][1];
-    // document.getElementById("ninth_score").textContent = leaderboard[8][1];
-    // document.getElementById("tenth_score").textContent = leaderboard[9][1];
   }
 }
 
 //display player username
 function updatePlayerName() {
   const playerNameSpan = document.getElementById("player_name");
-  //console.log(playerNameSpan);
   const storedUsername = localStorage.getItem("username");
-  //console.log(storedUsername)
   if (storedUsername) {
     playerNameSpan.textContent = storedUsername;
   }
@@ -137,6 +110,7 @@ function logout() {
 
 //logic for the videogame
 function timer(seconds) {
+  // calls enableVisibility // calls reset_score
   //prevent button spam
   if (
     document.getElementById("start_Button").getAttribute("disabled") === "true"
@@ -191,7 +165,7 @@ function enableVisibility(id) {
   divElement.style.visibility = "visible";
 }
 
-//change rock location AND rock
+//change rock location AND rock //calls disableVisiblity //calls enableVisibility
 function location_randomizer() {
   disableVisibility("rock_1");
   disableVisibility("rock_2");
@@ -209,7 +183,7 @@ function location_randomizer() {
   }
 }
 
-//accuracy formula
+//accuracy formula //calls randomizer
 function calculate_score() {
   location_randomizer();
   score_counter++;
