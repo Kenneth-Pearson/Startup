@@ -1,21 +1,23 @@
 // This is play.js
-create_board();
+let leaderboard = new Array(11);
 let rock_1 = document.getElementById("rock_1");
 let rock_2 = document.getElementById("rock_2");
 disableVisibility("rock_1");
 disableVisibility("rock_2");
 updatePlayerName();
 document.getElementById("start_Button").removeAttribute("disabled");
-var score_counter = 0;
-var num_clicks = 0;
+let score_counter = 0;
+let num_clicks = 0;
 document.getElementById("score").innerText = "Score: -";
 track_clicks_bool = false;
 
-var isFirstVisit = localStorage.getItem("firstVisit");
+let isFirstVisit = localStorage.getItem("firstVisit");
 if (isFirstVisit === null) {
   localStorage.setItem("firstVisit", "false");
-  var leaderboard = new Array(11);
   create_board();
+} else {
+  preJSONleaderboard = localStorage.getItem("leaderboard");
+  leaderboard = JSON.parse(preJSONleaderboard);
 }
 
 function create_board() {
@@ -78,18 +80,23 @@ function score_notifcations(new_score, new_lowest_score) {
 
 // HUGE DEAL
 function sort_scores() {
+  preJSONleaderboard = localStorage.getItem("leaderboard");
+  leaderboard = JSON.parse(preJSONleaderboard);
   //calls score_notifications
   if (
     document.getElementById("player_name").innerText !==
     "Login_To_Track_Your_Score"
   ) {
-    var new_score = leaderboard[10][1];
+    let new_score = leaderboard[10][1];
     leaderboard = leaderboard.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
-    var new_lowest_score = leaderboard[10][1];
+    let new_lowest_score = leaderboard[10][1];
     let leaderboardJSON = JSON.stringify(leaderboard);
     localStorage.setItem("leaderboard", leaderboardJSON);
     // update_board();
     score_notifcations(new_score, new_lowest_score);
+    fetch("/store/scores")
+      .then((r) => r.json())
+      .then((j) => console.log(j));
   }
 }
 
@@ -155,13 +162,13 @@ function timer(seconds) {
 
 //hide asteroids
 function disableVisibility(id) {
-  var divElement = document.getElementById(id);
+  let divElement = document.getElementById(id);
   divElement.style.visibility = "hidden";
 }
 
 //show asteroids
 function enableVisibility(id) {
-  var divElement = document.getElementById(id);
+  let divElement = document.getElementById(id);
   divElement.style.visibility = "visible";
 }
 
@@ -169,9 +176,9 @@ function enableVisibility(id) {
 function location_randomizer() {
   disableVisibility("rock_1");
   disableVisibility("rock_2");
-  var rock_rng = Math.random();
-  var x = Math.random() * 140 - 70; //*162-81; *140-70;
-  var y = Math.random() * 14 - 7; //*18-9;   *14-7;
+  let rock_rng = Math.random();
+  let x = Math.random() * 140 - 70; //*162-81; *140-70;
+  let y = Math.random() * 14 - 7; //*18-9;   *14-7;
   if (rock_rng > 0.5) {
     rock_1.style.transform =
       "translate(" + x.toString() + "vh, " + y.toString() + "vw)";
@@ -208,7 +215,7 @@ function add_num_clicks() {
   }
 }
 
-//reset relevant variables
+//reset relevant letiables
 function reset_score() {
   score_counter = 0;
   num_clicks = 0;

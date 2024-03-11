@@ -1,6 +1,4 @@
 // This is scores.js
-preJSONleaderboard = localStorage.getItem("leaderboard");
-leaderboard = JSON.parse(preJSONleaderboard);
 
 function logout() {
   const nameEl = document.querySelector("#name");
@@ -9,6 +7,8 @@ function logout() {
 }
 //player names
 function update_board() {
+  preJSONleaderboard = localStorage.getItem("leaderboard");
+  leaderboard = JSON.parse(preJSONleaderboard);
   document.getElementById("first_name").textContent = leaderboard[0][0];
   document.getElementById("second_name").textContent = leaderboard[1][0];
   document.getElementById("third_name").textContent = leaderboard[2][0];

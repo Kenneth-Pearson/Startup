@@ -10,10 +10,26 @@ app.use((req, res, next) => {
 // Built in middleware - Static file hosting
 app.use(express.static("public"));
 
-// Routing middleware
-app.get("/store/:storeName", (req, res) => {
-  res.send({ name: req.params.storeName });
+// Router for service endpoints
+var apiRouter = express.Router();
+app.use(`/api`, apiRouter);
+
+let scores = [];
+
+// GetScores
+apiRouter.get("/scores", (_req, res) => {
+  res.send(scores);
 });
+
+// SubmitScore
+apiRouter.post("/score", (req, res) => {
+  scores = updateScores(req.body, scores);
+  res.send(scores);
+});
+
+function updateScores(newScoreInfo, scores) {
+  return scores;
+}
 
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
