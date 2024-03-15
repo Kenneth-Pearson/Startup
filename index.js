@@ -27,7 +27,7 @@ apiRouter.post("/score", (req, res) => {
   res.send(scores);
 });
 
-function updateScores(newScoreInfo, scores) {
+function updateScores(scores) {
   return scores;
 }
 
