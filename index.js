@@ -14,16 +14,28 @@ app.use(express.static("public"));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-//let scores = [];
-
-// GetScores
+let scores = [
+  ["0", -0],
+  ["1", -1],
+  ["2", -2],
+  ["3", -3],
+  ["4", -4],
+  ["5", -5],
+  ["6", -6],
+  ["7", -7],
+  ["8", -8],
+  ["9", -9],
+  ["10", -10],
+];
+//request is what comes in, response is what you send out
+// Get Scores
 apiRouter.get("/getscores", (_req, res) => {
   res.send(scores);
 });
 
-// SubmitScore
+// Submit Scores
 apiRouter.post("/submitscores", (req, res) => {
-  scores = updateScores(scores);
+  scores = req.body;
   res.send(scores);
 });
 

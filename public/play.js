@@ -1,5 +1,5 @@
 // This is play.js
-let leaderboard = new Array(11);
+let presort = new Array(11);
 let rock_1 = document.getElementById("rock_1");
 let rock_2 = document.getElementById("rock_2");
 disableVisibility("rock_1");
@@ -11,38 +11,38 @@ let num_clicks = 0;
 document.getElementById("score").innerText = "Score: -";
 track_clicks_bool = false;
 
-let isFirstVisit = localStorage.getItem("firstVisit");
-if (isFirstVisit === null) {
-  localStorage.setItem("firstVisit", "false");
-  create_board();
-} else {
-  preJSONleaderboard = localStorage.getItem("leaderboard");
-  leaderboard = JSON.parse(preJSONleaderboard);
-}
+// let isFirstVisit = localStorage.getItem("firstVisit");
+// if (isFirstVisit === null) {
+//   localStorage.setItem("firstVisit", "false");
+//   create_board();
+// } else {
+//   preJSONleaderboard = localStorage.getItem("leaderboard");
+//   leaderboard = JSON.parse(preJSONleaderboard);
+// }
 
-function create_board() {
-  leaderboard[0] = ["None", "-1"];
-  leaderboard[1] = ["None", "-2"];
-  leaderboard[2] = ["None", "-3"];
-  leaderboard[3] = ["None", "-4"];
-  leaderboard[4] = ["None", "-5"];
-  leaderboard[5] = ["None", "-6"];
-  leaderboard[6] = ["None", "-7"];
-  leaderboard[7] = ["None", "-8"];
-  leaderboard[8] = ["None", "-9"];
-  leaderboard[9] = ["None", "-10"];
-  leaderboard[10] = ["Player_Space", "-100"];
-  let leaderboardJSON = JSON.stringify(leaderboard);
-  localStorage.setItem("leaderboard", leaderboardJSON);
-}
+// function create_board() {
+//   leaderboard[0] = ["None", "-1"];
+//   leaderboard[1] = ["None", "-2"];
+//   leaderboard[2] = ["None", "-3"];
+//   leaderboard[3] = ["None", "-4"];
+//   leaderboard[4] = ["None", "-5"];
+//   leaderboard[5] = ["None", "-6"];
+//   leaderboard[6] = ["None", "-7"];
+//   leaderboard[7] = ["None", "-8"];
+//   leaderboard[8] = ["None", "-9"];
+//   leaderboard[9] = ["None", "-10"];
+//   leaderboard[10] = ["Player_Space", "-100"];
+//   let leaderboardJSON = JSON.stringify(leaderboard);
+//   localStorage.setItem("leaderboard", leaderboardJSON);
+// }
 
 function score_notifcations(new_score, new_lowest_score) {
   if (new_score !== new_lowest_score) {
     let x = document.getElementById("score").innerText.replace("Score: ", "");
-    for (let i = 0; i < leaderboard.length; i++) {
+    for (let i = 0; i < presort.length; i++) {
       if (
-        leaderboard[i][1] === x &&
-        leaderboard[i][0] === document.getElementById("player_name").innerText
+        presort[i][1] === x &&
+        presort[i][0] === document.getElementById("player_name").innerText
       ) {
         if (i === 0) {
           //first
@@ -80,24 +80,23 @@ function score_notifcations(new_score, new_lowest_score) {
 
 // HUGE DEAL
 function sort_scores() {
-  preJSONleaderboard = localStorage.getItem("leaderboard");
-  leaderboard = JSON.parse(preJSONleaderboard);
-  //calls score_notifications
+  let presort = [];
+  fetch("/api/getscores").then((r) => (presort = r.json()));
+  console.log("hi_early");
   if (
     document.getElementById("player_name").innerText !==
     "Login_To_Track_Your_Score"
   ) {
-    let new_score = leaderboard[10][1];
-    leaderboard = leaderboard.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
-    let new_lowest_score = leaderboard[10][1];
-    let leaderboardJSON = JSON.stringify(leaderboard);
-    localStorage.setItem("leaderboard", leaderboardJSON);
-    // update_board();
+    let new_score = presort[10][1];
+    sorted = presort.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
+    let new_lowest_score = sorted[10][1];
     score_notifcations(new_score, new_lowest_score);
-    // console.log("hello");
-    fetch("/api/submitscores")
-      .then((r) => r.json())
-      .then((j) => console.log(j));
+    console.log("hi");
+    fetch("/api/submitscores", {
+      method: "POST",
+      body: JSON.stringify({ sorted }),
+    });
+    // .then((r) => r.json())
   }
 }
 
@@ -118,7 +117,10 @@ function logout() {
 
 //logic for the videogame
 function timer(seconds) {
+  let leaderboard = [];
+  fetch("/api/getscores").then((r) => (leaderboard = r.json()));
   // calls enableVisibility // calls reset_score
+
   //prevent button spam
   if (
     document.getElementById("start_Button").getAttribute("disabled") === "true"
@@ -156,7 +158,7 @@ function timer(seconds) {
         .getElementById("score")
         .innerText.replace("Score: ", "");
       leaderboard[10][1] = justNumber;
-      // console.log("hello?");
+      console.log("hello?");
       sort_scores();
     }
   }, intervalDuration);
