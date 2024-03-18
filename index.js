@@ -14,22 +14,22 @@ app.use(express.static("public"));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-let scores = [];
+//let scores = [];
 
 // GetScores
-apiRouter.get("/scores", (_req, res) => {
+apiRouter.get("/getscores", (_req, res) => {
   res.send(scores);
 });
 
 // SubmitScore
-apiRouter.post("/score", (req, res) => {
-  scores = updateScores(req.body, scores);
+apiRouter.post("/submitscores", (req, res) => {
+  scores = updateScores(scores);
   res.send(scores);
 });
 
-function updateScores(scores) {
-  return scores;
-}
+// function updateScores(scores) {
+//   return scores;
+// }
 
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });

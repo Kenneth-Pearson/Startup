@@ -6,7 +6,7 @@ function logout() {
   window.location.href = "play.html";
 }
 //player names
-function update_board() {
+function update_display() {
   preJSONleaderboard = localStorage.getItem("leaderboard");
   leaderboard = JSON.parse(preJSONleaderboard);
   document.getElementById("first_name").textContent = leaderboard[0][0];

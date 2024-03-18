@@ -64,7 +64,7 @@ function score_notifcations(new_score, new_lowest_score) {
           document.getElementById("score_update").innerText =
             document.getElementById("player_name").innerText +
             " took " +
-            (i + 2) +
+            (i + 1) +
             "th on the leaderboard.";
         }
       }
@@ -94,7 +94,8 @@ function sort_scores() {
     localStorage.setItem("leaderboard", leaderboardJSON);
     // update_board();
     score_notifcations(new_score, new_lowest_score);
-    fetch("/store/scores")
+    // console.log("hello");
+    fetch("/api/submitscores")
       .then((r) => r.json())
       .then((j) => console.log(j));
   }
@@ -155,6 +156,7 @@ function timer(seconds) {
         .getElementById("score")
         .innerText.replace("Score: ", "");
       leaderboard[10][1] = justNumber;
+      // console.log("hello?");
       sort_scores();
     }
   }, intervalDuration);
