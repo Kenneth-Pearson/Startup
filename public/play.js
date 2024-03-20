@@ -79,26 +79,27 @@ function score_notifcations(new_score, new_lowest_score) {
 }
 
 // HUGE DEAL
-function sort_scores() {
-  let presort = [];
-  fetch("/api/getscores").then((r) => (presort = r.json()));
-  console.log("hi_early");
-  if (
-    document.getElementById("player_name").innerText !==
-    "Login_To_Track_Your_Score"
-  ) {
-    let new_score = presort[10][1];
-    sorted = presort.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
-    let new_lowest_score = sorted[10][1];
-    score_notifcations(new_score, new_lowest_score);
-    console.log("hi");
-    fetch("/api/submitscores", {
-      method: "POST",
-      body: JSON.stringify({ sorted }),
-    });
-    // .then((r) => r.json())
-  }
-}
+// async function sort_scores() {
+//   console.log("hi_earliest");
+//   let presort = [];
+//   const response = await fetch("/api/getscores");
+//   scores = await response.json();
+//   console.log("hi_early");
+//   if (
+//     document.getElementById("player_name").innerText !==
+//     "Login_To_Track_Your_Score"
+//   ) {
+//     let new_score = presort[10][1];
+//     sorted = presort.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
+//     let new_lowest_score = sorted[10][1];
+//     score_notifcations(new_score, new_lowest_score);
+//     console.log("hi");
+//     fetch("/api/submitscores", {
+//       method: "POST",
+//       body: JSON.stringify({ sorted }),
+//     });
+//   }
+// }
 
 //display player username
 function updatePlayerName() {
@@ -153,13 +154,18 @@ function timer(seconds) {
       disableVisibility("rock_1");
       disableVisibility("rock_2");
       clearInterval(intervalTimer); // Stop the timer when countdown reaches 0
-      leaderboard[10][0] = document.getElementById("player_name").innerText;
+      justPlayer = document.getElementById("player_name").innerText;
       let justNumber = document
         .getElementById("score")
         .innerText.replace("Score: ", "");
-      leaderboard[10][1] = justNumber;
+      justInfo = { username: justPlayer, score: justNumber };
+      console.log(justInfo);
       console.log("hello?");
-      sort_scores();
+      fetch("/api/submitscores", {
+        method: "POST",
+        header: { "content-type": "application/json" },
+        body: JSON.stringify(justInfo),
+      });
     }
   }, intervalDuration);
 }

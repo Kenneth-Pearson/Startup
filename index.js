@@ -10,23 +10,11 @@ app.use((req, res, next) => {
 // Built in middleware - Static file hosting
 app.use(express.static("public"));
 
+app.use(express.json());
 // Router for service endpoints
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-let scores = [
-  ["0", -0],
-  ["1", -1],
-  ["2", -2],
-  ["3", -3],
-  ["4", -4],
-  ["5", -5],
-  ["6", -6],
-  ["7", -7],
-  ["8", -8],
-  ["9", -9],
-  ["10", -10],
-];
 //request is what comes in, response is what you send out
 // Get Scores
 apiRouter.get("/getscores", (_req, res) => {
@@ -35,16 +23,11 @@ apiRouter.get("/getscores", (_req, res) => {
 
 // Submit Scores
 apiRouter.post("/submitscores", (req, res) => {
-  scores = req.body;
-  res.send(scores);
-});
-
-// function updateScores(scores) {
-//   return scores;
-// }
-
-app.use(function (err, req, res, next) {
-  res.status(500).send({ type: err.name, message: err.message });
+  console.log("submitscores reached");
+  console.log(req.body.score);
+  scores = updateScores(req.body, scores);
+  console.log(req.body);
+  res.send(scores); //sends back scores
 });
 
 // Listening to a network port
@@ -52,3 +35,24 @@ const port = 4000;
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
+
+let scores = [];
+function updateScores(newScore, scores) {
+  let found = false;
+  for (const [i, prevScore] of scores.entries()) {
+    if (newScore.score > prevScore.score) {
+      scores.splice(i, 0, newScore);
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    scores.push(newScore);
+  }
+
+  if (scores.length > 10) {
+    scores.length = 10;
+  }
+
+  return scores;
+}
