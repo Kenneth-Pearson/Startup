@@ -30,3 +30,4 @@ node index.js
 ## API I want to use
 
 https://github.com/nasa/apod-api
+Key -> GiL09jgswbhtmZ8bsL0Ze07Jm1OjFwfQNJSdfAVk

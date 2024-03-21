@@ -100,3 +100,25 @@ Scoreboard data is stored and sorted at the end of each game.
 ## 40% JavaScript support for your application's interaction logic.
 
 The game works as intended.
+
+# Service Deliverable
+
+## 40% - Create an HTTP service using Node.js and Express
+
+Node.js and Express used as intended
+
+## 10% - Frontend served up using Express static middleware
+
+Public directory loaded by middleware
+
+## 10% - Your frontend calls third party service endpoints
+
+NASA space image of the day called in scores.js
+
+## 20% - Your backend provides service endpoints
+
+Scores stored and provided on backend index.js
+
+## 20% - Your frontend calls your service endpoints
+
+submitscores and getscores called in play.js
