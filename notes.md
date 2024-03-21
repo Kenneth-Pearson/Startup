@@ -23,6 +23,10 @@ cd Startup
 ./deployFiles.sh -k production.pem -h cosmicclickerchallenge.click -s startup
 ./deployService.sh -k production.pem -h cosmicclickerchallenge.click -s startup
 
+## Listening on port 4000
+
+node index.js
+
 ## API I want to use
 
 https://github.com/nasa/apod-api

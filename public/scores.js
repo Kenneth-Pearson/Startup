@@ -8,6 +8,7 @@ function logout() {
 //player names
 async function update_display() {
   const response = await fetch("/api/getscores");
+  console.log(response);
   leaderboard = response.json();
   document.getElementById("first_name").textContent = leaderboard[0].username;
   document.getElementById("second_name").textContent = leaderboard[1].username;

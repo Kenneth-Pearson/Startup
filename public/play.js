@@ -163,7 +163,7 @@ function timer(seconds) {
       console.log("hello?");
       fetch("/api/submitscores", {
         method: "POST",
-        header: { "content-type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(justInfo),
       });
     }

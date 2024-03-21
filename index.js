@@ -15,6 +15,8 @@ app.use(express.json());
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+let scores = [];
+
 //request is what comes in, response is what you send out
 // Get Scores
 apiRouter.get("/getscores", (_req, res) => {
@@ -24,9 +26,10 @@ apiRouter.get("/getscores", (_req, res) => {
 // Submit Scores
 apiRouter.post("/submitscores", (req, res) => {
   console.log("submitscores reached");
-  console.log(req.body.score);
+  //console.log(req.body.score);
   scores = updateScores(req.body, scores);
-  console.log(req.body);
+  //console.log(req.body);
+  console.log(scores);
   res.send(scores); //sends back scores
 });
 
@@ -36,7 +39,6 @@ app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
 
-let scores = [];
 function updateScores(newScore, scores) {
   let found = false;
   for (const [i, prevScore] of scores.entries()) {
