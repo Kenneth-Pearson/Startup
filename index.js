@@ -15,6 +15,7 @@ app.use(express.json());
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+//initializing scores
 let scores = [];
 
 //request is what comes in, response is what you send out
@@ -38,10 +39,11 @@ const port = 4000;
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
-
 function updateScores(newScore, scores) {
+  console.log("updateScores reached");
   let found = false;
   for (const [i, prevScore] of scores.entries()) {
+    console.log("found");
     if (newScore.score > prevScore.score) {
       scores.splice(i, 0, newScore);
       found = true;
@@ -49,10 +51,12 @@ function updateScores(newScore, scores) {
     }
   }
   if (!found) {
+    console.log("not_found");
     scores.push(newScore);
   }
 
   if (scores.length > 10) {
+    console.log("adjusted_size");
     scores.length = 10;
   }
 
