@@ -44,7 +44,7 @@ function updateScores(newScore, scores) {
   let found = false;
   for (const [i, prevScore] of scores.entries()) {
     console.log("found");
-    if (newScore.score > prevScore.score) {
+    if (parseInt(newScore.score) > parseInt(prevScore.score)) {
       scores.splice(i, 0, newScore);
       found = true;
       break;
