@@ -20,6 +20,21 @@ let scores = [];
 
 //request is what comes in, response is what you send out
 // Get Scores
+
+apiRouter.post("/authentication", async (req, res) => {
+  //look in database if the user alr exists
+  sent_information = await req.body.username; //[Username, Password]
+  if (await DB.getUser(sent_information[0])) {
+    //if password match
+    //{
+    //....
+    //}
+  } else {
+    DB.createUser(sent_information[0], sent_information[1]);
+    //cookies...
+  }
+});
+
 apiRouter.get("/getscores", async (_req, res) => {
   results = await DB.getHighScores();
   console.log(results);

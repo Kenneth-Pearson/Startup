@@ -1,6 +1,8 @@
 // This is index.js
 function login() {
   const nameEl = document.querySelector("#name");
+  const passEl = document.querySelector("#password");
+
   localStorage.setItem("username", nameEl.value);
   window.location.href = "play.html";
 }
