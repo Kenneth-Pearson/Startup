@@ -25,6 +25,11 @@
   height: 5vh;
 }
 
+#password {
+  width: 15vw;
+  height: 5vh;
+}
+
 input[type="button"] {
   /* Your styles here */
   background-color: #4caf50; /* Example: Change background color */
