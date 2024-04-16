@@ -7,6 +7,14 @@ img {
   max-height: 20vh;
 }
 
+#logout {
+  border: none;
+  color: lime;
+  background-color: black;
+  font-size: 2vh;
+  padding-right: 0.08em;
+}
+
 .other_placements {
   color: purple;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000,

@@ -1,4 +1,5 @@
 // This is play.js
+
 let presort = new Array(11);
 let rock_1 = document.getElementById("rock_1");
 let rock_2 = document.getElementById("rock_2");
@@ -10,31 +11,6 @@ let score_counter = 0;
 let num_clicks = 0;
 document.getElementById("score").innerText = "Score: -";
 track_clicks_bool = false;
-
-// let isFirstVisit = localStorage.getItem("firstVisit");
-// if (isFirstVisit === null) {
-//   localStorage.setItem("firstVisit", "false");
-//   create_board();
-// } else {
-//   preJSONleaderboard = localStorage.getItem("leaderboard");
-//   leaderboard = JSON.parse(preJSONleaderboard);
-// }
-
-// function create_board() {
-//   leaderboard[0] = ["None", "-1"];
-//   leaderboard[1] = ["None", "-2"];
-//   leaderboard[2] = ["None", "-3"];
-//   leaderboard[3] = ["None", "-4"];
-//   leaderboard[4] = ["None", "-5"];
-//   leaderboard[5] = ["None", "-6"];
-//   leaderboard[6] = ["None", "-7"];
-//   leaderboard[7] = ["None", "-8"];
-//   leaderboard[8] = ["None", "-9"];
-//   leaderboard[9] = ["None", "-10"];
-//   leaderboard[10] = ["Player_Space", "-100"];
-//   let leaderboardJSON = JSON.stringify(leaderboard);
-//   localStorage.setItem("leaderboard", leaderboardJSON);
-// }
 
 function score_notifcations(new_score, new_lowest_score) {
   if (new_score !== new_lowest_score) {
@@ -78,29 +54,6 @@ function score_notifcations(new_score, new_lowest_score) {
   }
 }
 
-// HUGE DEAL
-// async function sort_scores() {
-//   console.log("hi_earliest");
-//   let presort = [];
-//   const response = await fetch("/api/getscores");
-//   scores = await response.json();
-//   console.log("hi_early");
-//   if (
-//     document.getElementById("player_name").innerText !==
-//     "Login_To_Track_Your_Score"
-//   ) {
-//     let new_score = presort[10][1];
-//     sorted = presort.sort((a, b) => parseInt(b[1]) - parseInt(a[1]));
-//     let new_lowest_score = sorted[10][1];
-//     score_notifcations(new_score, new_lowest_score);
-//     console.log("hi");
-//     fetch("/api/submitscores", {
-//       method: "POST",
-//       body: JSON.stringify({ sorted }),
-//     });
-//   }
-// }
-
 //display player username
 function updatePlayerName() {
   const playerNameSpan = document.getElementById("player_name");
@@ -116,6 +69,7 @@ function logout() {
   fetch(`/api/logout`, {
     method: "delete",
   }).then(() => (window.location.href = "/"));
+  window.location.href = "index.html";
 }
 
 //logic for the videogame

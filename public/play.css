@@ -51,8 +51,14 @@ main {
   font-size: 32px;
   cursor: pointer;
 }
-
-button:hover {
+#logout {
+  border: none;
+  color: lime;
+  background-color: black;
+  font-size: 2vh;
+  padding-right: 0.08em;
+}
+.start_Button button:hover {
   /* Your styles for the hover state */
   background-color: #7bce7f; /* Example: change background color */
   color: white; /* Example: change text color */
@@ -69,7 +75,7 @@ button:hover {
   font-size: 32px;
 }
 
-button:active {
+.start_Button button:active {
   /* Your styles for the clicked state */
   background-color: #7bce7f; /* Example: change background color */
   color: white; /* Example: change text color */

@@ -1,14 +1,24 @@
+//This is backend index.js
+const cookieParser = require("cookie-parser");
+const bcrypt = require("bcrypt");
 const express = require("express");
 const app = express();
 const DB = require("./database.js");
-const bcrypt = require("bcrypt");
 
 const authCookieName = "token";
 
 // Built in middleware - Static file hosting
+app.use(express.json());
+
+// Use the cookie parser middleware for tracking authentication tokens
+app.use(cookieParser());
+
+// Serve up the applications static content
 app.use(express.static("public"));
 
-app.use(express.json());
+// Trust headers that are forwarded from the proxy so we can determine IP addresses
+app.set("trust proxy", true);
+
 // Router for service endpoints
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
@@ -26,7 +36,6 @@ function setAuthCookie(res, authToken) {
   });
 }
 apiRouter.delete("/logout", (_req, res) => {
-  console.log("Logging out");
   res.clearCookie(authCookieName);
   res.status(204).end();
 });

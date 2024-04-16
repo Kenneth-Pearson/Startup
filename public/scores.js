@@ -5,6 +5,7 @@ async function logout() {
   await fetch(`/api/logout`, {
     method: "delete",
   });
+  window.location.href = "index.html";
 }
 //player names
 async function update_display() {
