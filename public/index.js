@@ -19,6 +19,8 @@ async function login() {
 
   if (response.ok) {
     window.location.href = "play.html";
+    let element = document.getElementById("player_name");
+    element.textContent = nameEl;
   } else {
     let divElement = document.getElementById("warning");
     divElement.style.visibility = "visible";
