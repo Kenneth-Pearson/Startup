@@ -7,6 +7,7 @@ async function logout() {
   });
   window.location.href = "index.html";
 }
+
 //player names
 async function update_display() {
   const response = await fetch("/api/getscores");

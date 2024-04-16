@@ -122,3 +122,25 @@ Scores stored and provided on backend index.js
 ## 20% - Your frontend calls your service endpoints
 
 submitscores and getscores called in play.js
+
+# Login Deliverable
+
+## Supports new user registration
+
+Login/Sign Up Button on index.html page & authentication endpoint in the index.js file
+
+## Supports existing user authentication
+
+Login/Sign Up Button on index.html page & authentication endpoint in the index.js file
+
+## Stores application data in MongoDB
+
+Scores stored through the database.js file
+
+## Stores and recieves credentials in MongoDB
+
+Username, password, and token stored and recieved from MongoDB through the index.js and database.js files
+
+## Restricts application functionality based upon authentication
+
+Secure API router in the index.js file prevents unauthorized users from sending their scores or viewing the scoreboard
