@@ -1,9 +1,10 @@
 // This is scores.js
 
-function logout() {
-  const nameEl = document.querySelector("#name");
+async function logout() {
   localStorage.setItem("username", "Login_To_Track_Your_Score");
-  window.location.href = "play.html";
+  await fetch(`/api/logout`, {
+    method: "delete",
+  });
 }
 //player names
 async function update_display() {
