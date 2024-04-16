@@ -3,11 +3,22 @@ async function login() {
   const nameEl = document.querySelector("#name");
   const passEl = document.querySelector("#password");
   passedInfo = { username: nameEl, password: passEl };
-  const result = await fetch("/api/authentication", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(passedInfo),
-  });
+  // if user exists, login protocol
+  // // check that username and password match
+  // // token
+  // // set username local storage
+  // // move to play.html
+
+  // if user does not yet exist, sign up protocol
+  // // username and password put into DB, assuming password is atleast 1 long
+  // // token given
+  // // set username local storage
+  // // move to play.html
+  // const result = await fetch("/api/authentication", {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify(passedInfo),
+  // });
 
   localStorage.setItem("username", nameEl.value);
   window.location.href = "play.html";

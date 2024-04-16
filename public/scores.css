@@ -4,6 +4,7 @@
 img {
   border-radius: 15px;
   padding: 0.1em;
+  max-height: 20vh;
 }
 
 .other_placements {

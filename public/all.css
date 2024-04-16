@@ -1,112 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
-a:link, a:visited
-{
-color:lime;
-text-decoration:none;
+a:link,
+a:visited {
+  color: lime;
+  text-decoration: none;
 }
 /* Background Animation */
 body {
-    animation: colors 20s infinite;
+  animation: colors 20s infinite;
+}
+@keyframes colors {
+  0%,
+  100% {
+    background-color: red;
   }
-@keyframes colors
-{
-    0%, 100%{
-        background-color:red;
-    }
 
-    12.5%{
-        background-color:orange;
-    }
+  12.5% {
+    background-color: orange;
+  }
 
-    25%{
-        background-color:yellow;
-    }
-    37.5%{
-        background-color:lime;
-    }
+  25% {
+    background-color: yellow;
+  }
+  37.5% {
+    background-color: lime;
+  }
 
-    50%{
-        background-color:green;
-    }
+  50% {
+    background-color: green;
+  }
 
-    62.5%{
-        background-color:cyan;
-    }
-    75%{
-        background-color:blue;
-    }
-    87.5%{
-        background-color:purple;
-    }
+  62.5% {
+    background-color: cyan;
+  }
+  75% {
+    background-color: blue;
+  }
+  87.5% {
+    background-color: purple;
+  }
 }
 
-
-*{
-    font-family: 'Pixelify Sans', sans-serif;
-    text-align: center;
-}  
-
-html{
-    height: 100%;
+* {
+  font-family: "Pixelify Sans", sans-serif;
+  text-align: center;
 }
 
-li{
-    display:inline;
+html {
+  height: 100%;
 }
 
-
-  
-
-
-body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+li {
+  display: inline;
 }
 
-header{
-    flex: 0 80px;
-    background: hsl(0, 0%, 0%);
-    color: white;
-    border-radius: 5px;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-  
-main{
-    flex: 1;
-    font-size: 30px;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-footer{
-    flex: 0 60px;
-    text-align:left;
-    font-size: 1.5vh;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header {
+  flex: 0 80px;
+  background: hsl(0, 0%, 0%);
+  color: white;
+  border-radius: 15px;
+  margin: 0.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-    font-family: 'Sixtyfour', sans-serif;
-    font-size: 1fr;
+main {
+  flex: 1;
+  font-size: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+footer {
+  flex: 0 60px;
+  text-align: left;
+  font-size: 1.5vh;
+  background-color: black;
+  color: white;
+  margin: 0.5vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+h1 {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 1fr;
+}
