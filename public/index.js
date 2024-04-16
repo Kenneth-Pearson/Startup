@@ -1,27 +1,28 @@
 // This is index.js
+
+function disableWarningVisiblity() {
+  let divElement = document.getElementById("warning");
+  divElement.style.visibility = "hidden"; //or visible
+}
+disableWarningVisiblity();
+
 async function login() {
-  const nameEl = document.querySelector("#name");
-  const passEl = document.querySelector("#password");
+  const nameEl = document.querySelector("#name").value;
+  const passEl = document.querySelector("#password").value;
   passedInfo = { username: nameEl, password: passEl };
   // if user exists, login protocol
-  // // check that username and password match
-  // // token
-  // // set username local storage
-  // // move to play.html
+  const response = await fetch("/api/authentication", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(passedInfo),
+  });
 
-  // if user does not yet exist, sign up protocol
-  // // username and password put into DB, assuming password is atleast 1 long
-  // // token given
-  // // set username local storage
-  // // move to play.html
-  // const result = await fetch("/api/authentication", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(passedInfo),
-  // });
-
-  localStorage.setItem("username", nameEl.value);
-  window.location.href = "play.html";
+  if (response.ok) {
+    window.location.href = "play.html";
+  } else {
+    let divElement = document.getElementById("warning");
+    divElement.style.visibility = "visible";
+  }
 }
 
 function logout() {
@@ -29,33 +30,6 @@ function logout() {
   localStorage.setItem("username", "Login_To_Track_Your_Score");
   window.location.href = "play.html";
 }
-
-const cookieParser = require("cookie-parser");
-const bcrypt = require("bcrypt");
-const express = require("express");
-const app = express();
-const DB = require("./database.js");
-
-const authCookieName = "token";
-
-// The service port may be set on the command line
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
-
-// JSON body parsing using built-in middleware
-app.use(express.json());
-
-// Use the cookie parser middleware for tracking authentication tokens
-app.use(cookieParser());
-
-// Serve up the applications static content
-app.use(express.static("public"));
-
-// Trust headers that are forwarded from the proxy so we can determine IP addresses
-app.set("trust proxy", true);
-
-// Router for service endpoints
-var apiRouter = express.Router();
-app.use(`/api`, apiRouter);
 
 // CreateAuth token for a new user
 // apiRouter.post('/auth/create', async (req, res) => {
