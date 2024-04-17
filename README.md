@@ -144,3 +144,21 @@ Username, password, and token stored and recieved from MongoDB through the index
 ## Restricts application functionality based upon authentication
 
 Secure API router in the index.js file prevents unauthorized users from sending their scores or viewing the scoreboard
+
+# WebSocket Deliverable
+
+## Backend listens for WebSocket connection
+
+Backend Websocket done through the peerProxy.js file
+
+## Frontend makes WebSocket connection
+
+Frontend Websocket done through the play.js file
+
+## Data sent over WebSocket connection
+
+A player score notifcation is sent after a game concludes.
+
+## Websocket data displayed in the application interface
+
+A player score notification is displayed on the left side of the play.html page.
