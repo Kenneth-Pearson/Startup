@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const express = require("express");
 const app = express();
 const DB = require("./database.js");
+const { peerProxy } = require("./peerProxy.js");
 
 const authCookieName = "token";
 
@@ -88,6 +89,8 @@ secureApiRouter.post("/submitscores", async (req, res) => {
 
 // Listening to a network port
 const port = 4000;
-app.listen(port, function () {
+const httpService = app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
