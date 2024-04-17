@@ -58,6 +58,16 @@ main {
   font-size: 2vh;
   padding-right: 0.08em;
 }
+
+#logout:hover {
+  border: none;
+  color: red;
+  background-color: black;
+  font-size: 2vh;
+  padding-right: 0.08em;
+  cursor: pointer;
+}
+
 .start_Button button:hover {
   /* Your styles for the hover state */
   background-color: #7bce7f; /* Example: change background color */

@@ -39,6 +39,14 @@ img {
     1px 1px 0 #fff;
 }
 
+#logout:hover {
+  border: none;
+  color: red;
+  background-color: black;
+  font-size: 2vh;
+  padding-right: 0.08em;
+  cursor: pointer;
+}
 /* .top_list
 {
     padding: 0.1em;
