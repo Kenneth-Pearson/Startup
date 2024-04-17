@@ -19,6 +19,7 @@ socket.onmessage = async (event) => {
   // }
 };
 
+displayMsg(localStorage.getItem("player_messages"));
 let presort = new Array(11);
 let rock_1 = document.getElementById("rock_1");
 let rock_2 = document.getElementById("rock_2");
@@ -140,11 +141,14 @@ function timer(seconds) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(justInfo),
       });
+      //update for everyone else
       broadcastEvent(
         "GameEndEvent",
         localStorage.getItem("username"),
         justNumber
       );
+      //update for you
+      displayMsg(`You scored ${justNumber} points`);
     }
   }, intervalDuration);
 }
@@ -224,6 +228,9 @@ function broadcastEvent(type, user, score) {
 }
 
 function displayMsg(value) {
-  const chatText = document.querySelector("#player_messages");
-  chatText.textContent = value;
+  if (value !== null) {
+    localStorage.setItem("player_messages", value);
+    const chatText = document.querySelector("#player_messages");
+    chatText.textContent = localStorage.getItem("player_messages");
+  }
 }
