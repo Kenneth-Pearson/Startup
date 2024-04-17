@@ -187,3 +187,35 @@ function reset_score() {
   num_clicks = 0;
   document.getElementById("score").innerText = "Score: -";
 }
+
+//broadcastEvent(this.getPlayerName(), GameEvent, {});
+
+function broadcastEvent(type, value) {
+  const event = {
+    type: type,
+    value: value,
+  };
+  socket.send(JSON.stringify(event));
+}
+
+function configureWebSocket() {
+  const protocol = window.location.protocol === "http:" ? "ws" : "wss";
+  socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  socket.onopen = (event) => {
+    displayMsg("system", "Game", "Connected");
+  };
+  socket.onclose = (event) => {
+    displayMsg("system", "Game", "Disconnected");
+  };
+  socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    if (msg.type === GameEndEvent) {
+      this.displayMsg(
+        GameEndEvent,
+        `${msg.value.user} scored ${msg.value.score} points`
+      );
+    } else if (msg.type === GameStartEvent) {
+      this.displayMsg(StartGameEvent, `${msg.value.user} started a new game`);
+    }
+  };
+}
